@@ -1,0 +1,51 @@
+<app-auth-layout title="Inicia sesión con tu cuenta" [showBackButton]="false">
+  
+  <!-- ✅ Etiqueta bien cerrada sin contenido -->
+  <app-header-navigation></app-header-navigation>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-6">
+    <app-input
+      formControlName="email"
+      label="Correo o CURP"
+      id="email"
+      type="text"
+      placeholder="Introduce tu correo o curp"
+    >
+    </app-input>
+
+    <app-input
+      formControlName="password"
+      label="Contraseña"
+      id="password"
+      type="password"
+      placeholder="Introduce tu contraseña"
+    >
+      <button
+        icon
+        type="button"
+        class="text-gray-400 hover:text-white transition-colors"
+      >
+        <i class="pi pi-eye"></i>
+      </button>
+    </app-input>
+
+    <div class="text-right text-sm">
+      <a
+        routerLink="../forgot-password"
+        class="font-medium text-gray-400 hover:text-white"
+        >¿Olvidaste tu contraseña?</a
+      >
+    </div>
+
+    <app-button type="submit" [disabled]="loginForm.invalid">
+      Iniciar sesión
+    </app-button>
+
+    <div class="text-center text-sm">
+      <p class="text-gray-400">
+        ¿No tienes una cuenta?
+        <a routerLink="../register" class="auth-nav-link">Regístrate ahora</a>
+      </p>
+    </div>
+  </form>
+</app-auth-layout>

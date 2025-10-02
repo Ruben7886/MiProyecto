@@ -1,0 +1,21 @@
+<!-- src/app/shared/components/input/input.component.html -->
+<div class="space-y-2">
+  <label [for]="id" class="block text-sm font-medium text-gray-400">
+    {{ label }}
+  </label>
+  <div class="relative">
+    <input
+      [id]="id"
+      [type]="type"
+      [value]="value"
+      [disabled]="isDisabled"
+      (input)="onInputChange($event)"
+      (blur)="onTouched()"
+      class="block w-full px-4 py-3 text-white bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-red-500 transition-colors placeholder-gray-500"
+      [placeholder]="placeholder"
+    />
+    <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+      <ng-content select="[icon]"></ng-content>
+    </div>
+  </div>
+</div>
