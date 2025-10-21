@@ -6,11 +6,11 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule],
   templateUrl: './auth-layout.html',
-  styleUrls: ['./auth-layout.css']
+  styleUrls: ['./auth-layout.css'],
 })
 export class AuthLayout {
   @Input() title: string = '';
   @Input() subtitle: string = '';
   @Input() showBackButton: boolean = true;
-  @Input() imageUrl: string = 'assets/images/auth-bg.jpg';
+  @Input() imageUrl: string = 'images/fondo.webp';
 }
