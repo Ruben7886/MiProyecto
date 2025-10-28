@@ -1,64 +1,22 @@
 <!-- src/app/shared/components/auth-layout/auth-layout.component.html -->
-<div class="auth-page h-screen overflow-hidden relative bg-black">
+<div
+  style="
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vh;
+    overflow: hidden;
+    background-color: black;
+  "
+>
   <!-- Logo positioned at top-left of entire screen -->
-  <div class="absolute top-0 left-0 z-20 p-8">
-    <img
-      src=""
-      alt="Logo"
-      class="h-12 w-auto"
-    />  
+  <div style="width: 50%; position: realative; display: block">
+    <img src="" alt="Logo" class="h-12 w-auto" [src]="imageUrl" />
   </div>
 
-  <!-- Navigation positioned at top-right -->
-  <div class="absolute top-0 left-1/2 right-0 z-20">
-    <div class="bg-black text-gray-50 px-8 sm:px-12 py-8">
-      <ng-content select="[navigation]"></ng-content>
-    </div>
-  </div>
-
-  <!-- Main Content Grid -->
-  <div class="h-screen grid grid-cols-1 lg:grid-cols-2">
-    <!-- Left side - Image -->
-    <div class="relative hidden lg:block">
-      <img
-        class="object-cover w-full h-full"
-        [src]="imageUrl"
-        alt="Background"
-      />
-      <!-- Gradient overlay -->
-      <div
-        class="absolute inset-y-0 right-0 w-8 bg-gradient-to-r from-transparent via-black/20 to-black/60"
-      ></div>
-    </div>
-
-    <!-- Right side - Form -->
-    <div
-      class="bg-black text-gray-50 flex flex-col p-8 sm:p-12 pt-24 h-full overflow-hidden"
-    >
-      <!-- Form Content Wrapper-->
-      <div class="flex-grow flex items-center justify-center min-h-0">
-        <div class="w-full max-w-md">
-          @if (showBackButton) {
-          <a
-            routerLink="../"
-            class="flex items-center justify-center w-12 h-12 mb-10 border border-red-500 rounded-full text-red-500 hover:border-red-400 hover:text-red-400 transition-colors"
-          >
-            <i class="pi pi-arrow-left text-sm"></i>
-          </a>
-          }
-
-          <h2 class="text-4xl font-bold leading-tight">{{ title }}</h2>
-
-          @if (subtitle) {
-          <p class="mt-4 text-gray-400">{{ subtitle }}</p>
-          }
-
-          <div class="mt-10">
-            <!-- Default slot for the form -->
-            <ng-content></ng-content>
-          </div>
-        </div>
-      </div>
+  <div>
+    <div class="space-y-6">
+      <ng-content></ng-content>
     </div>
   </div>
 </div>
