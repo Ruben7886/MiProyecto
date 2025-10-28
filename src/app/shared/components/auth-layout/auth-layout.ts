@@ -12,5 +12,5 @@ export class AuthLayout {
   @Input() title: string = '';
   @Input() subtitle: string = '';
   @Input() showBackButton: boolean = true;
-  @Input() imageUrl: string = 'images/fondo.webp';
+  @Input() imageUrl: string = 'imagenes/fondoww.webp';
 }

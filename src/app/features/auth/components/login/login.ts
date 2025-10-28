@@ -8,7 +8,6 @@ import { ButtonComponent } from '../../../../shared/components/button/button';
 import { InputComponent } from '../../../../shared/components/Input/input';
 import { HeaderNavigationComponent } from '../../../../shared/components/header-navigation/header-navigation';
 
-
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -18,8 +17,7 @@ import { HeaderNavigationComponent } from '../../../../shared/components/header-
     AuthLayout,
     InputComponent,
     ButtonComponent,
-        HeaderNavigationComponent, // ✅ Agregado aquí
-
+    HeaderNavigationComponent, // ✅ Agregado aquí
   ],
   templateUrl: './login.html',
   styleUrls: ['./login.css'],
@@ -32,6 +30,14 @@ export class LoginComponent {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
     });
+  }
+
+  loginWithEmail(): void {
+    console.log('Login with Email clicked');
+  }
+
+  loginWithCurp(): void {
+    console.log('Login with CURP clicked');
   }
 
   onSubmit(): void {
